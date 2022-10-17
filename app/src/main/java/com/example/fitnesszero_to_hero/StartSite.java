@@ -18,4 +18,9 @@ public class StartSite extends AppCompatActivity {
         Intent intent = new Intent(StartSite.this, Kontakt.class);
         startActivity(intent);
     }
+
+    public void gotoInfo(View view){
+        Intent intent = new Intent(StartSite.this, Info.class);
+        startActivity(intent);
+    }
 }

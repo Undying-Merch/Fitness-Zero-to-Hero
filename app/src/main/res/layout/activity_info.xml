@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/_fd4398cb4eb02502234efa6667c28cf"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Info">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="48dp"
+        android:text="Info"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="278dp"
+        android:layout_height="272dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="80dp"
+        android:text="Bacon ipsum dolor amet strip steak bacon jowl chuck ball tip. Swine filet mignon pork leberkas, ground round burgdoggen flank fatback buffalo boudin. Biltong frankfurter sirloin kevin jerky tenderloin bresaola pork rump venison turducken. Tenderloin alcatra ground round pancetta chicken salami shoulder beef ribs shank bresaola leberkas capicola. Burgdoggen boudin short loin drumstick salami chicken pastrami sausage kevin venison swine. Pig turducken cow boudin, burgdoggen hamburger t-bone ribeye."
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="234dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/_f590351e2a0952f8a9f6cea9cde4fbd" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
