@@ -28,7 +28,8 @@
         android:background="@color/white"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Navn:"
+        android:textColorHint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -41,7 +42,8 @@
         android:background="@color/white"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="'@Email"
+        android:hint="Email:"
+        android:textColorHint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
@@ -55,7 +57,8 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="Besked:"
+        android:hint="Besked:"
+        android:textColorHint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 

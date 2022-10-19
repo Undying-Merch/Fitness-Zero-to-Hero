@@ -23,4 +23,9 @@ public class StartSite extends AppCompatActivity {
         Intent intent = new Intent(StartSite.this, Info.class);
         startActivity(intent);
     }
+
+    public void gotoLogin(View view){
+        Intent intent = new Intent(StartSite.this, Login.class);
+        startActivity(intent);
+    }
 }
