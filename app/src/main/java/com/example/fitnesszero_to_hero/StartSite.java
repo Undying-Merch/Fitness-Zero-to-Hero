@@ -28,4 +28,9 @@ public class StartSite extends AppCompatActivity {
         Intent intent = new Intent(StartSite.this, Login.class);
         startActivity(intent);
     }
+
+    public void gotoTilmelding(View view){
+        Intent intent = new Intent(StartSite.this, Tilmeld.class);
+        startActivity(intent);
+    }
 }

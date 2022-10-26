@@ -13,6 +13,29 @@
         android:theme="@style/Theme.FitnessZerotoHero"
         tools:targetApi="31">
         <activity
+            android:name=".Tilmeld"
+            android:exported="false"
+            android:parentActivityName=".StartSite">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".PersonalAbonnement"
+            android:exported="false"
+            android:parentActivityName=".PersonalMain">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TrackTraining"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".PersonalInfo"
             android:exported="false"
             android:parentActivityName=".PersonalMain">

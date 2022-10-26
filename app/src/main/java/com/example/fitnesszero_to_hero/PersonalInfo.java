@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -26,6 +27,11 @@ public class PersonalInfo extends AppCompatActivity {
         textName.setEnabled(false);
         textEmail.setEnabled(false);
         textPhone.setEnabled(false);
+    }
+
+    public void gotoPersonalAbbonement(View view){
+        Intent intent = new Intent(PersonalInfo.this, PersonalAbonnement.class);
+        startActivity(intent);
     }
 
     //For changing personal info
