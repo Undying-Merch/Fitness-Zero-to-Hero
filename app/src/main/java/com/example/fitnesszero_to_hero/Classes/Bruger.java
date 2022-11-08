@@ -4,10 +4,14 @@ public class Bruger {
 
     public String brugernavn;
     public String Password;
+    public int brugerId;
 
-    Bruger(){}
-    Bruger(String name, String pass){
+    public Bruger(){}
+    public Bruger(String name, String pass, int id){
         this.brugernavn = name;
         this.Password = pass;
+        this.brugerId = id;
     }
+
+
 }

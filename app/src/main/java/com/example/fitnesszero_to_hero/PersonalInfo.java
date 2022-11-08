@@ -54,7 +54,7 @@ public class PersonalInfo extends AppCompatActivity {
                 textEmail.setEnabled(false);
                 textPhone.setEnabled(false);
                 abbBTN.setVisibility(View.VISIBLE);
-                editBTN.setText("Ændre Oplysninger");
+                editBTN.setText("Ændre Oplysninger:");
                 editing = false;
             }
         };
