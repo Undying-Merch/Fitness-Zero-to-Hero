@@ -35,7 +35,7 @@ public class PersonalInfo extends AppCompatActivity {
     boolean editing = false;
     RequestQueue requestQueue;
     private String kunderURL = "http://10.0.2.2:8000/data/kundeliste/?format=json";
-    private String updateKunde = "";
+    private String updateKunde = "http://10.0.2.2:8000/data/kunde/";
     private ArrayList<Kunder> kunderne = new ArrayList<>();
 
     private void putIntoList(int id, String name, String phone, String mail){
@@ -113,7 +113,7 @@ public class PersonalInfo extends AppCompatActivity {
     }
 
     private void updateUser(int id, String name, String phone, String mail) {
-        StringRequest request = new StringRequest(Request.Method.POST, updateKunde + id + "/", new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.PUT, updateKunde + id, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(PersonalInfo.this, "Info updated", Toast.LENGTH_SHORT).show();
@@ -126,7 +126,7 @@ public class PersonalInfo extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(PersonalInfo.this, "Fail to get response = " + error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(PersonalInfo.this, "" + error, Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
@@ -168,7 +168,7 @@ public class PersonalInfo extends AppCompatActivity {
                 String mail = textEmail.getText().toString();
                 String phone = textPhone.getText().toString();
                 //TODO get update URL from Nico.
-                //updateUser(kdId, name, phone, mail);
+                updateUser(kdId, name, phone, mail);
             }
         };
 
