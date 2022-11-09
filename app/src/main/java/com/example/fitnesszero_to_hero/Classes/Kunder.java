@@ -10,9 +10,16 @@ public boolean active;
 
 public Kunder(){}
 
-    public Kunder(int id, String Name){
+public Kunder(int id, String Name){
     this.kundeID = id;
     this.name = Name;
+    }
+
+public Kunder(int id, String navn, String mail, String phone){
+    this.kundeID = id;
+    this.name = navn;
+    this.mail = mail;
+    this.phone = phone;
     }
 
 public Kunder(int id, String Name, String Phone, String Mail, boolean Active){

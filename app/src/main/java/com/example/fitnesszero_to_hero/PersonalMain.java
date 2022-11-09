@@ -29,12 +29,24 @@ public class PersonalMain extends AppCompatActivity {
     private ArrayList<Kunder> kunderne = new ArrayList<>();
 
 
+
+
+
     private String kundeURL = "http://10.0.2.2:8000/data/kunde/";
     private String jsonEnding = "/?format=json";
     private String kunderURL = "http://10.0.2.2:8000/data/kundeliste/?format=json";
 
-    private void putIntoList(int id, String name){
-        Kunder kunde = new Kunder(id, name);
+    private void changeKunderneAtt(int id, String name, String mail, String phone){
+        for (int i = 0; i < kunderne.size(); i++){
+            if (id == kunderne.get(i).kundeID){
+                kunderne.get(i).name = name;
+                kunderne.get(i).mail = mail;
+                kunderne.get(i).phone = phone;
+            }
+        }
+    }
+    private void putIntoList(int id, String name, String mail, String phone, boolean paid){
+        Kunder kunde = new Kunder(id, name, phone, mail, paid);
         kunderne.add(kunde);
         if (id == kundeId){
             TextView kundeName = findViewById(R.id.kDName);
@@ -67,6 +79,15 @@ public class PersonalMain extends AppCompatActivity {
 
     public void gotoPersonalInfo(View view){
         Intent intent = new Intent(PersonalMain.this, PersonalInfo.class);
+        intent.putExtra("kundeId", kundeId);
+        for (int i = 0; i < kunderne.size(); i++){
+            if (kunderne.get(i).kundeID == kundeId){
+                intent.putExtra("mail", kunderne.get(i).mail);
+                intent.putExtra("phone", kunderne.get(i).phone);
+                intent.putExtra("name", kunderne.get(i).name);
+                intent.putExtra("active", kunderne.get(i).active);
+            }
+        }
         startActivity(intent);
     }
 
@@ -81,7 +102,10 @@ public class PersonalMain extends AppCompatActivity {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         int id = jsonObject.getInt("id");
                         String kdName = jsonObject.getString("navn");
-                        putIntoList(id, kdName);
+                        String mail = jsonObject.getString("mail");
+                        String phone = jsonObject.getString("mobil");
+                        boolean paid = jsonObject.getBoolean("betalt");
+                        putIntoList(id, kdName, phone, mail, paid);
                     }
                 } catch (Exception w) {
                     Toast.makeText(PersonalMain.this, w.getMessage(), Toast.LENGTH_LONG);

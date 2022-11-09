@@ -27,7 +27,7 @@
         <activity
             android:name=".PersonalAbonnement"
             android:exported="false"
-            android:parentActivityName=".PersonalMain">
+            android:parentActivityName=".PersonalInfo">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -50,7 +50,8 @@
         <activity
             android:name=".PersonalMain"
             android:exported="false"
-            android:parentActivityName=".StartSite">
+            android:parentActivityName=".StartSite"
+            android:launchMode="singleTask">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
