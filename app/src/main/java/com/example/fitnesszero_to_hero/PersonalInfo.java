@@ -167,7 +167,6 @@ public class PersonalInfo extends AppCompatActivity {
                 String name = textName.getText().toString();
                 String mail = textEmail.getText().toString();
                 String phone = textPhone.getText().toString();
-                //TODO get update URL from Nico.
                 updateUser(kdId, name, phone, mail);
             }
         };
