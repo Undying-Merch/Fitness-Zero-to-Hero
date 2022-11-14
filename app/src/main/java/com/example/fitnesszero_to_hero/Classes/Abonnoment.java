@@ -7,8 +7,13 @@ public class Abonnoment {
     public String name;
     public String description;
 
-    Abonnoment(){}
-    Abonnoment(int id, int Price, String Name, String Desc){
+    public Abonnoment(){}
+    public Abonnoment(int Price, String Name, String Desc){
+        this.price = Price;
+        this.name = Name;
+        this.description = Desc;
+    }
+    public Abonnoment(int id, int Price, String Name, String Desc){
         this.abonId = id;
         this.price = Price;
         this.name = Name;

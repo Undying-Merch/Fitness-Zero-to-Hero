@@ -36,7 +36,9 @@ public class PersonalInfo extends AppCompatActivity {
     RequestQueue requestQueue;
     private String kunderURL = "http://10.0.2.2:8000/data/kundeliste/?format=json";
     private String updateKunde = "http://10.0.2.2:8000/data/kunde/";
+    private String AllAbonnJun = "http://10.0.2.2:8000/data/ajliste/?format=json";
     private ArrayList<Kunder> kunderne = new ArrayList<>();
+    public int abonnId = 0;
 
     private void putIntoList(int id, String name, String phone, String mail){
         Kunder kunde = new Kunder(id, name, mail, phone);
@@ -54,6 +56,12 @@ public class PersonalInfo extends AppCompatActivity {
         }
 
     }
+    private void findAbonnId(int kId, int abonId){
+        if (kdId == kId){
+            abonnId = abonId;
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,14 +85,42 @@ public class PersonalInfo extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(this);
         getUsers();
+        getAbonnJunction();
     }
 
     public void gotoPersonalAbbonement(View view){
         Intent intent = new Intent(PersonalInfo.this, PersonalAbonnement.class);
+        intent.putExtra("kundeId", kdId);
+        intent.putExtra("abonnId", abonnId);
         startActivity(intent);
     }
 
-    public void getUsers(){
+    private void getAbonnJunction(){
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, AllAbonnJun, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                JSONArray jsonArray = response;
+                try {
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        int kundeId = jsonObject.getInt("kundeid");
+                        int abonId = jsonObject.getInt("abonnementid");
+                        findAbonnId(kundeId, abonId);
+                    }
+                } catch (Exception w) {
+                    Toast.makeText(PersonalInfo.this, w.getMessage(), Toast.LENGTH_LONG);
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(PersonalInfo.this, error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+        requestQueue.add(jsonArrayRequest);
+    }
+
+    private void getUsers(){
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, kunderURL, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
