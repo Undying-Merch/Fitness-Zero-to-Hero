@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessZerotoHero"
-        tools:targetApi="31"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".PersonalTrackTraining"
+            android:exported="false"
+            android:parentActivityName=".PersonalMain">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".Tilmeld"
             android:exported="false"
@@ -34,7 +42,8 @@
         </activity>
         <activity
             android:name=".TrackTraining"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".PersonalMain">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -50,8 +59,8 @@
         <activity
             android:name=".PersonalMain"
             android:exported="false"
-            android:parentActivityName=".StartSite"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:parentActivityName=".StartSite">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

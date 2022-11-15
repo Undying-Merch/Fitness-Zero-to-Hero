@@ -134,6 +134,16 @@ public class PersonalAbonnement extends AppCompatActivity {
             }
         }
         changeCurrentAbonnText(abonnId, text);
+        saveButton();
+    }
+    private void saveButton(){
+        Button SaveButton = (Button) findViewById(R.id.button15);
+        if (abonnId == 0){
+            SaveButton.setText("Sæt Abonnoment.");
+        }
+        else{
+            SaveButton.setText("Ændre Abonnoment");
+        }
     }
 
     @Override
@@ -149,6 +159,7 @@ public class PersonalAbonnement extends AppCompatActivity {
         getAllAbonn();
         getAbonnJunction();
 
+        saveButton();
     }
 
 
