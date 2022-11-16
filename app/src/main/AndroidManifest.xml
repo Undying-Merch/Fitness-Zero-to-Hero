@@ -17,6 +17,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".PersonalTrainingOverview"
+            android:exported="false"
+            android:parentActivityName=".PersonalMain">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".PersonalTrackTraining"
             android:exported="false"
             android:parentActivityName=".PersonalMain">

@@ -147,7 +147,7 @@ public class PersonalTrackTraining extends AppCompatActivity {
         requestQueue.add(request);
     }
 
-    public void finalMoveTable (View view){
+    public void popUpForChoosing (View view){
         TextView ovelsee = (TextView) findViewById(R.id.textView15);
 
         final ArrayAdapter<String> adp = new ArrayAdapter<String>(PersonalTrackTraining.this,

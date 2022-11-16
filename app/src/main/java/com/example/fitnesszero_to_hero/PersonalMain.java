@@ -97,6 +97,12 @@ public class PersonalMain extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gotoTrainingOverview(View view){
+        Intent intent = new Intent(PersonalMain.this, PersonalTrainingOverview.class);
+        intent.putExtra("kundeId", kundeId);
+        startActivity(intent);
+    }
+
     //TODO make single person
     public void getKunde(int id){
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, kunderURL, null, new Response.Listener<JSONArray>() {
