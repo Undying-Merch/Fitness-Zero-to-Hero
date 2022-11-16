@@ -103,6 +103,11 @@ public class PersonalMain extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gotoHold(View view){
+        Intent intent = new Intent(PersonalMain.this, PersonalHold.class);
+        startActivity(intent);
+    }
+
     //TODO make single person
     public void getKunde(int id){
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, kunderURL, null, new Response.Listener<JSONArray>() {

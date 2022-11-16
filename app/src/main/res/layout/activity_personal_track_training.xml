@@ -25,9 +25,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="44dp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="Repitation"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
@@ -37,9 +39,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="64dp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="Modstand"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
 
@@ -49,9 +53,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="68dp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="Tid (Minutter)"
         android:inputType="number"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
 
@@ -73,7 +79,7 @@
         android:layout_marginStart="124dp"
         android:layout_marginTop="36dp"
         android:text="Vælg Træning Ovenfor"
-        android:textColor="@color/black"
+        android:textColor="@color/design_default_color_primary_dark"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button17" />
